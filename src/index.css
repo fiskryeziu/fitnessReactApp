@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+button {
+    border: none;
+    background-color: rgb(33, 18, 87);
+    color: #fff;
+    padding: .3em 3em;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Lato', sans-serif;
+
+}
+
+/* nav  menu */
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 2em;
+    font-weight: 100;
+}
+
+nav span {
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    gap: 3em;
+}
+
+nav ul li {
+    position: relative;
+}
+
+nav ul li::before {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: black;
+    position: absolute;
+    bottom: -.2em;
+    transition: ease-in 200ms;
+
+}
+
+nav ul li:hover::before {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
+
+/* hero section  */
+.heroSection {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 90vh;
+}
+
+.heroimg {
+    width: 40%;
+    transform: scaleX(-1);
+    left: 2em;
+    bottom: 2em;
+}
+
+.heroText {
+    width: 30%;
+}
+
+@media (max-width:768px) {
+    .heroSection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .heroimg {
+        display: none;
+    }
+
+    .heroText {
+        width: 60%;
+    }
+}
+
+/* searchSection  */
+.searchExercises {
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    margin-top: 10em;
+}
+
+.searchBox {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBox input {
+    padding: .3em 0;
+    font-size: 18px;
+    width: 50%;
+}
+
+.searchExerciseBox {
+    position: relative;
+    width: 100%;
+    padding-right: 5em;
+    padding-left: 1em;
+}
+
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    margin: 0 1em;
+    border: 1px solid black;
+}
+
+.box .iconExercise {
+    font-size: 10em;
+    color: rgb(40, 34, 70);
+}
+
+.box p {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+    display: none;
+
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.arrowLogoLeft,
+.arrowLogoRight {
+    position: absolute;
+    right: 1em;
+    z-index: 1000;
+
+}
+
+.arrowLogoRight {
+    bottom: 0;
+    background-color: #fff;
+    color: #000;
+    height: 100px;
+}
+
+.arrowLogoLeft {
+    top: 0;
+    background-color: #fff;
+    color: #000;
+    height: 100px;
+}
+
+.arrowLogoLeft:hover,
+.arrowLogoRight:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* exercices  */
+.exerciseSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.exerciseH {
+    margin: 5em 1em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.boxExercise {
+    display: flex;
+    max-width: 500px;
+    border: 1px solid black;
+    flex-direction: column;
+    margin: 1em 1em;
+}
+
+.boxExercise img {
+    width: 100%;
+    height: auto;
+
+}
+
+.btnParts {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.btnParts button {
+    padding: .2em .5em;
+    border-radius: 20px;
+    background-color: #4C6793;
+}
+
+.boxExercise p {
+    text-align: center;
+    margin: 2em;
+}
