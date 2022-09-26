@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { fetchData, options } from '../utils/fetchData'
 import ScrollBox from './ScrollBox'
+import { scroller } from 'react-scroll'
 
-const SearchExercise = ({ setExercises, setPart, part }) => {
+const SearchExercise = ({ setExercises, setPart }) => {
   const [input, setInput] = useState('')
   const [parts, setParts] = useState([])
 
@@ -42,12 +43,22 @@ const SearchExercise = ({ setExercises, setPart, part }) => {
           type="text"
           value={input}
           placeholder="Search exercises"
-          onChange={(e) => setInput(e.target.value.toLowerCase())}
+          onChange={(e) => setInput(e.target.value)}
         />
-        <button onClick={searchHandler}>Search</button>
+        <button
+          onClick={() => {
+            searchHandler()
+            scroller.scrollTo('exercises', {
+              duration: 800,
+              smooth: true,
+            })
+          }}
+        >
+          Search
+        </button>
       </div>
       <div className="searchExerciseBox">
-        <ScrollBox data={parts} />
+        <ScrollBox data={parts} setPart={setPart} />
       </div>
     </div>
   )

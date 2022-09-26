@@ -3,7 +3,7 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
 import { IoMdArrowBack, IoMdArrowForward } from 'react-icons/io'
 import BodyPartExercise from './BodyPartExercise'
 
-const ScrollBox = ({ data }) => {
+const ScrollBox = ({ data, setPart }) => {
   const RightArrow = () => {
     const { scrollNext } = useContext(VisibilityContext)
 
@@ -30,7 +30,12 @@ const ScrollBox = ({ data }) => {
   return (
     <ScrollMenu RightArrow={RightArrow} LeftArrow={LeftArrow}>
       {data.map((item) => (
-        <BodyPartExercise data={item} key={item.id || item} itemId={item.id} />
+        <BodyPartExercise
+          data={item}
+          key={item.id || item}
+          itemId={item.id}
+          setPart={setPart}
+        />
       ))}
     </ScrollMenu>
   )

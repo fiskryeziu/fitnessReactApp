@@ -1,14 +1,17 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const BoxExercise = ({ item }) => {
   return (
-    <div className="boxExercise">
-      <img src={item.gifUrl} alt="exercises_example" />
-      <div className="btnParts">
-        <button>{item.target}</button>
+    <Link to={`/exercise/${item.id}`}>
+      <div className="boxExercise">
+        <img src={item.gifUrl} alt="exercises_example" />
+        <div className="btnParts">
+          <button>{item.target}</button>
+        </div>
+        <p>{item.name}</p>
       </div>
-      <p>{item.name}</p>
-    </div>
+    </Link>
   )
 }
 

@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Link as LinkScroll } from 'react-scroll'
 
 const NavBar = () => {
+  const location = useLocation()
+
   return (
     <nav>
       <Link to="/">
@@ -14,11 +16,13 @@ const NavBar = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
-        <li>
-          <LinkScroll to="exercises" smooth={true} duration={600}>
-            Exercise
-          </LinkScroll>
-        </li>
+        {location.pathname === '/' && (
+          <li style={{ cursor: 'pointer' }}>
+            <LinkScroll to="exercises" smooth={true} duration={1000}>
+              Exercise
+            </LinkScroll>
+          </li>
+        )}
       </ul>
     </nav>
   )
