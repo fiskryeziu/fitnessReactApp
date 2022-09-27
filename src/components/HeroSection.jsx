@@ -1,10 +1,11 @@
 import React from 'react'
-import heropng from '../assets/hero.png'
+import heropng from '../assets/fitness.jpg'
 
 const HeroSection = () => {
   return (
     <div className="heroSection">
       <img src={heropng} alt="heroimage" className="heroimg" />
+      <div className="colorDiv"></div>
       <div className="heroText">
         <h1>
           EVERY WORKOUT <br /> COUNTS

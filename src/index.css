@@ -19,7 +19,7 @@ a {
 
 button {
     border: none;
-    background-color: rgb(33, 18, 87);
+    background-color: #222831;
     color: #fff;
     padding: .3em 3em;
 }
@@ -38,15 +38,19 @@ nav {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    height: 10vh;
 }
 
 nav h1 {
     font-size: 2em;
     font-weight: 100;
+    color: #393E46;
 }
 
 nav span {
-    font-weight: bold;
+    font-weight: 900;
+    color: #222831;
+
 }
 
 nav ul {
@@ -56,13 +60,13 @@ nav ul {
 
 nav ul li {
     position: relative;
+    text-transform: uppercase;
 }
 
 nav ul li::before {
     content: '';
     width: 0;
     height: 2px;
-    background-color: black;
     position: absolute;
     bottom: -.2em;
     transition: ease-in 200ms;
@@ -71,8 +75,26 @@ nav ul li::before {
 
 nav ul li:hover::before {
     width: 100%;
-    height: 2px;
-    background-color: black;
+    height: 3px;
+    background-color: #0F4C75;
+    transition: ease-in 200ms;
+}
+
+@media (max-width:500px) {
+    nav ul {
+        display: flex;
+        gap: 1em;
+    }
+
+    nav h1 {
+        font-size: 1.5em;
+        font-weight: 100;
+        color: #393E46;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+    }
 }
 
 
@@ -87,15 +109,37 @@ nav ul li:hover::before {
     height: 90vh;
 }
 
+.colorDiv {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #000;
+    opacity: .4;
+    z-index: -1;
+}
+
 .heroimg {
-    width: 40%;
-    transform: scaleX(-1);
-    left: 2em;
-    bottom: 2em;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
 }
 
 .heroText {
     width: 30%;
+}
+
+.heroText h1 {
+    color: #00ADB5;
+}
+
+.heroText p {
+    color: #EEEEEE;
 }
 
 @media (max-width:768px) {
@@ -105,9 +149,6 @@ nav ul li:hover::before {
         align-items: center;
     }
 
-    .heroimg {
-        display: none;
-    }
 
     .heroText {
         width: 60%;
@@ -119,7 +160,11 @@ nav ul li:hover::before {
     display: flex;
     flex-direction: column;
     gap: 5em;
-    margin-top: 10em;
+    margin-top: 5em;
+}
+
+.searchExercises h1 {
+    color: #222831
 }
 
 .searchBox {
@@ -128,7 +173,7 @@ nav ul li:hover::before {
 }
 
 .searchBox input {
-    padding: .3em 0;
+    padding: .3em .2em;
     font-size: 18px;
     width: 50%;
 }
@@ -149,17 +194,20 @@ nav ul li:hover::before {
     width: 200px;
     height: 200px;
     margin: 0 1em;
-    border: 1px solid black;
+    border-radius: 20px;
+    background-color: #222831;
+
 }
 
 .box .iconExercise {
     font-size: 10em;
-    color: rgb(40, 34, 70);
+    color: #00ADB5;
 }
 
 .box p {
     font-size: 20px;
     text-transform: capitalize;
+    color: #EEEEEE;
 }
 
 
@@ -185,22 +233,23 @@ nav ul li:hover::before {
 
 .arrowLogoRight {
     bottom: 0;
-    background-color: #fff;
-    color: #000;
-    height: 100px;
+    height: 90px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border-radius: 5px;
 }
 
 .arrowLogoLeft {
     top: 0;
-    background-color: #fff;
-    color: #000;
-    height: 100px;
+    height: 90px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border-radius: 5px;
 }
 
 .arrowLogoLeft:hover,
 .arrowLogoRight:hover {
-    background-color: #000;
-    color: #fff;
+    filter: brightness(1.2);
 }
 
 /* exercices  */
@@ -215,14 +264,28 @@ nav ul li:hover::before {
     margin: 5em 1em;
     text-align: center;
     margin-bottom: 1em;
+    color: #222831;
 }
 
 .boxExercise {
     display: flex;
     max-width: 500px;
-    border: 1px solid black;
     flex-direction: column;
     margin: 1em 1em;
+    border-top: 4px solid #00ADB5;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+        rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px,
+        rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    transition: ease-in 250ms;
+
+}
+
+.boxExercise:hover {
+    transform: translateY(-1em);
+    transition: ease-in 250ms;
 }
 
 .boxExercise img {
@@ -241,6 +304,45 @@ nav ul li:hover::before {
     padding: .2em .5em;
     border-radius: 20px;
     background-color: #4C6793;
+
+}
+
+/* CSS */
+.btnParts button {
+    align-items: center;
+    appearance: none;
+    background-color: #3EB2FD;
+    background-image: linear-gradient(1deg, #4F58FD, #149BF3 99%);
+    background-size: calc(100% + 20px) calc(100% + 20px);
+    border-radius: 100px;
+    border-width: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1rem;
+    height: auto;
+    justify-content: center;
+    padding: .3em .7em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .2s, background-position .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.btnParts button:active,
+.btnParts button:focus {
+    outline: none;
+}
+
+.btnParts button:hover {
+    background-position: -20px -20px;
 }
 
 .boxExercise p {
@@ -248,7 +350,7 @@ nav ul li:hover::before {
     margin: 2em;
 }
 
-/* paginate  */
+/* pagination  */
 
 .paginateDiv {
     display: flex;
@@ -265,13 +367,13 @@ nav ul li:hover::before {
 }
 
 .pagination>.active>a {
-    background-color: #47ccde;
-    border-color: #47ccde;
+    background-color: #222831;
+    border-color: #0F4C75;
     color: #fff;
 }
 
 .pagination>li>a {
-    border: 1px solid #47ccde;
+    border: 1px solid #0F4C75;
     padding: .3em .4em;
     outline: none;
     cursor: pointer;
@@ -283,14 +385,15 @@ nav ul li:hover::before {
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-    background-color: #47ccde;
-    border-color: #47ccde;
+    background-color: #222831;
+    border-color: #0F4C75;
     outline: none;
 }
 
 .pagination>li>a,
 .pagination>li>span {
-    color: #47ccde
+    color: #EEEEEE;
+    background-color: #222831;
 }
 
 .pagination>li:first-child>a,
@@ -298,4 +401,58 @@ nav ul li:hover::before {
 .pagination>li:last-child>a,
 .pagination>li:last-child>span {
     border-radius: unset
+}
+
+
+/* exercise Detail  */
+
+.exerciseDetail {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10em 2em;
+}
+
+.exerciseDetail h1 {
+    text-transform: capitalize;
+    padding: 2px;
+    border-bottom: 4px solid #00ADB5;
+}
+
+.imageBox {
+    max-width: 500px;
+    width: 100%;
+}
+
+.imageBox img {
+    width: 100%;
+}
+
+.iconText {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin: 2em 0;
+}
+
+.iconText p {
+    font-size: 1.5em;
+    text-transform: capitalize;
+    font-weight: 100;
+}
+
+@media (max-width:768px) {
+    .exerciseDetail {
+        display: flex;
+        flex-direction: column;
+        margin: 5em 2em;
+    }
+
+    .exerciseText {
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        max-width: 500px;
+        width: 100%;
+    }
 }

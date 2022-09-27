@@ -8,6 +8,7 @@ const BoxExercise = ({ item }) => {
         <img src={item.gifUrl} alt="exercises_example" />
         <div className="btnParts">
           <button>{item.target}</button>
+          <button>{item.bodyPart}</button>
         </div>
         <p>{item.name}</p>
       </div>

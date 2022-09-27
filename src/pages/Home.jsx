@@ -3,7 +3,6 @@ import Exercises from '../components/Exercises'
 import Footer from '../components/Footer'
 import HeroSection from '../components/HeroSection'
 import SearchExercise from '../components/SearchExercise'
-import fetchData from '../utils/fetchData'
 
 const Home = () => {
   const [exercises, setExercises] = useState([])
