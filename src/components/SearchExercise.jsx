@@ -43,7 +43,7 @@ const SearchExercise = ({ setExercises, setPart }) => {
           type="text"
           value={input}
           placeholder="Search exercises"
-          onChange={(e) => setInput(e.target.value)}
+          onChange={(e) => setInput(e.target.value.toLowerCase())}
         />
         <button
           onClick={() => {
