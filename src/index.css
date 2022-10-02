@@ -385,7 +385,7 @@ nav ul li:hover::before {
 .pagination>.active>span:hover,
 .pagination>.active>a:focus,
 .pagination>.active>span:focus {
-    background-color: #222831;
+    background-color: #00ADB5;
     border-color: #0F4C75;
     outline: none;
 }
